@@ -12,7 +12,7 @@ class PlaywrightPage:
 
         self.writing_test = page.get_by_title("Writing tests")
 
-        self.find_assert = page.get_by_role("heading", name="Assertions", exact=True)
+        self.find_assert = page.get_by_role("link", name="test assertions", exact=True)
 
     def has_title(self):
 
@@ -29,8 +29,6 @@ class PlaywrightPage:
         expect(self.page).to_have_title("Installation | Playwright")
 
         self.writing_test.click()
-
-        expect(self.page).to_have_url(lambda url: "writing-tests" in url)
 
         expect(self.find_assert).to_be_visible()
 

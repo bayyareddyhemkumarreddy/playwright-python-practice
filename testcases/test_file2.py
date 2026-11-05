@@ -9,7 +9,7 @@ def test_select_bus(setup):
 
         abhi_bus = AbhiBus(page)
 
-        abhi_bus.book_buses("Bengaluru", "Hyderabad")
+        abhi_bus.book_buses("Bengaluru","Hyderabad")
 
     finally:
         context.close()

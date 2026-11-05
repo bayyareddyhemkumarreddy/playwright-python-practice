@@ -2,8 +2,9 @@ from POM.playwrightpage import PlaywrightPage,expect
 
 
 def test_get_started(setup):
+    context = setup.new_context(no_viewport=True)
 
-    page = setup.new_page()
+    page = context.new_page()
 
     pw = PlaywrightPage(page)
 
@@ -11,7 +12,7 @@ def test_get_started(setup):
 
     pw.get_started()
 
-    expect(page).to_have_title("Installation | Playwright")
+    expect(page).to_have_title("Assertions | Playwright")
 
 
 
